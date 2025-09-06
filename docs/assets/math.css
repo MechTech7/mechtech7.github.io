@@ -1,0 +1,18 @@
+/* Keep MathJax typesetting independent from theme typography */
+.mathjax-process .mjx-container {
+  font-size: 1em;         /* Use surrounding text size */
+  line-height: 1.25;      /* Stable line height for multi-line equations */
+  margin: 1rem 0;         /* Nice vertical spacing for display math */
+}
+
+/* Avoid extra <p> spacing around $$ blocks when authored in Markdown */
+.mathjax-process p {
+  margin: 0;
+}
+
+/* Optional: prevent images or code styles from affecting math */
+.mathjax-process img,
+.mathjax-process code,
+.mathjax-process pre {
+  all: unset;
+}
