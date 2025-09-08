@@ -33,6 +33,15 @@ github_username:  MechTech7
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-toc
+#   - jekyll-remote-theme
+# remote_theme: alshedivat/al-folio
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  math_engine: mathjax
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.

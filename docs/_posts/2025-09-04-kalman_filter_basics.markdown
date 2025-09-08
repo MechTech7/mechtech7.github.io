@@ -7,7 +7,7 @@ categories: jekyll update
 ---
 
 *The Information about Kalman Filters here can be found in Chapter 1 of [Model Predictive Control: Theory, Computation, and Design](https://sites.engineering.ucsb.edu/~jbraw/mpc/MPC-book-2nd-edition-1st-printing.pdf)*
-### System Description
+## System Description
 We assume that the system whose state we are trying to estimate can be modeled as follows
 
 $$
@@ -23,12 +23,12 @@ $$
 This is a linear time-invariant system that is affected by noise from random variables $w\in\mathbb{R}^g$ and $v\in \mathbb{R}^p$.  The matrix $G\in\mathbb{R}^{n\times g}$ allows for additional tuning between the relationship between noise $w$ and system state.  
 
 
-### Kalman Filter Derivation
-#### Linear Optimal Derivation
-##### Normal Distribution Identities
+## Kalman Filter Derivation
+### Linear Optimal Derivation
+#### Normal Distribution Identities
 Before we get into our derivation of the Kalman filter, we are going to introduce a couple of identities about normal distributions that will be useful for our derivation.
 
-###### Joint Independent Normals
+#### Joint Independent Normals
 Given $x\sim\mathcal{N}(\mu_x, C_{x})$ and $y\sim\mathcal{N}(\mu_y, C_{y})$ are statistically independent normal rendom variables, the joint density is given as follows.  
 
 $$
@@ -52,12 +52,12 @@ C_x & 0 \\
 $$
 {: .mathjax-process}
 
-###### Linear Transformation of a Normal
+#### Linear Transformation of a Normal
 Given $x\sim\mathcal{N}(\mu_x, C_{x})$  and the value $y=Ax$ is also a random variable sampled from the following distribution
 $$
 y\sim\mathcal{N}(A\mu_x, AC_xA^T)
 $$
-###### Conditional of a Joint Normal
+#### Conditional of a Joint Normal
 Given jointly distributed $x,y$ the conditional density of $x\vert y$ is given as follows
 
 $$
@@ -76,7 +76,7 @@ x_0\sim \mathcal{N}(\mu_{0}, Q_0)
 $$
 {: .mathjax-process}
 
-##### Derivation
+#### Derivation
 
 In practice, we often do not have access to information about $x_0$ so it is common to initialize $x_0$ to zero and $Q_0$ to some large matrix to represent our uncertainty about $x$.
 
