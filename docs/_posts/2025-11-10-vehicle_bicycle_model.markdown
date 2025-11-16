@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Bicycle Vehicle Dynamic Model"
+title:  "Nonlinear Bicycle Models for Vehicle Simulation"
 date:   2025-11-11
 math: True
 categories: jekyll update
