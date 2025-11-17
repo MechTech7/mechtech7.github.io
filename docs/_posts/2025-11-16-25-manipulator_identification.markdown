@@ -7,7 +7,7 @@ categories: jekyll update
 ---
 
 
-*Over the Summer of 2025, I had the opportunity to assist [Chinmay Devmalya](https://scholar.google.com/citations?user=aJUq8vEAAAAJ&hl=en&oi=sra) in the development of a new lightweight and compact robot arm called [Maestro](https://drive.google.com/file/d/1WwXqEQjavXoodTOxDVYupVYn_NGjQbXE/view).  I developed an optimization-based workflow for identifying the inertial parameters of the robot once it is first assembled.  The full project description is below.*
+*Over the Summer of 2025, I had the opportunity to assist [Chinmay Devmalya](https://scholar.google.com/citations?user=aJUq8vEAAAAJ&hl=en&oi=sra) in the development of a new lightweight and compact robot arm called [Maestro](https://drive.google.com/file/d/1WwXqEQjavXoodTOxDVYupVYn_NGjQbXE/view).  I developed an optimization-based workflow for identifying the kinematic and inertial parameters of the robot once it is first assembled.  The full project description is below.*
 
 ## Introduction
 In order to precisely control the position and applied force at the end-effector of a serial manipulator, we need a precise geometric and inertial model of our manipulator.  At design time, the dimensions of each link can be specified and inertial parameters of each link can be estimated using CAD software such as Fusion, Solidworks, or OnShape.  However, these modeled geometric and inertial parameters rarely match exactly with those of the fully assembled robots.  Common sources of this mismatch are tolerance stack up in machined parts or errors in component mass estimates.  Rather than enforce tighter (unrealistic) tolerances on machined parts or weigh each individual component before assembly to improve the accuracy of our model, we can use data-driven methods to estimate the geometric and inertial parameters of using motion data collected from the real robot.
@@ -77,7 +77,7 @@ $$
 \arg\min_x\|Ax - b\|
 $$
 
-The regressor matrix $A$ is determined by the choice of $q$ in the case of kinematic identification, and $q, \dot{q}, \ddot{q}$ in the case of dynamic identification.  ==In both cases, we would like to ensure that our observations $b$, make our underlying parameters as clear as possible==.  
+The regressor matrix $A$ is determined by the choice of $q$ in the case of kinematic identification, and $q, \dot{q}, \ddot{q}$ in the case of dynamic identification.  *In both cases, we would like to ensure that our observations $b$, make our underlying parameters as clear as possible*.  
 
 One way to quantify this "clearness" is thinking about the derivative of our observations with respect to our parameters.  If the derivative of our observation with respect to our parameters is small, we will struggle to differentiate between changes in observation caused by sensor noise and changes caused by parameter mismatch.  However, if our derivative with respect to parameters is large, this distinction is much easier to make.  In our case, this derivative is our $A$ matrix.
 
@@ -252,7 +252,7 @@ Our $$q_d, \dot{q}_d, \ddot{q}_d$$ come directly from our optimized trajectory. 
 A video of the simulated experiment is shown below
 
 <video controls width="700">
-  <source src="/assets/maestro_id_simulation.mov" type="video/quicktime">
+  <source src="/assets/maestro_id_simulation_test.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
